@@ -1,0 +1,107 @@
+.str, .atv
+{
+    color: #a5c261;
+}
+.kwd
+{
+    color: #cb7731;
+}
+.com
+{
+    color: #808080;
+}
+.typ
+{
+    color: #979748;
+}
+.lit
+{
+    color: #FACD22;
+}
+.pun, .tag, .atn
+{
+    color: #e8bf6a;
+}
+.pln
+{
+    color: #4b8f7e;
+}
+.dec
+{
+    color: #a5c261;
+}
+pre.prettyprint
+{
+    border: 1px solid #323232;
+    background: #2e2e2e;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+pre.prettyprint code
+{
+    background-color: inherit;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 16px;
+}
+ol.linenums
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+{
+    color: #e6e1dc;
+    margin-bottom: 0px;
+}
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #323232;
+}
+@media print
+{
+    .str
+    {
+        color: #060;
+    }
+    .kwd
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .com
+    {
+        color: #600;
+        font-style: italic;
+    }
+    .typ
+    {
+        color: #404;
+        font-weight: bold;
+    }
+    .lit
+    {
+        color: #044;
+    }
+    .pun
+    {
+        color: #440;
+    }
+    .pln
+    {
+        color: #000;
+    }
+    .tag
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .atn
+    {
+        color: #404;
+    }
+    .atv
+    {
+        color: #060;
+    }
+}

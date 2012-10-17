@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Backbone.js Demo</title>
+        <script type="text/javascript" src="js/vendor/html5shiv.min.js"></script>
+        <link rel="stylesheet" href="css/fonts/charis/stylesheet.css"/>
+        <link rel="stylesheet" href="css/fonts/inconsolata/stylesheet.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/minicolors/main.css"/>
+    </head>
+    <body>
+
+        <header>
+            <h1>Backbone.js Demo</h1>
+            <h2>An simple demonstration of Backbone.js' core features.</h2>
+        </header>
+
+        <!-- Content -->
+        <div id="main">
+            <div id="colorSample"></div>
+            <div id="addColor"></div>
+            <ul id="colorsList"></ul>
+        </div>
+
+        <footer>
+            &copy;2012 James O'Reilly - Find me on
+            <a href="http://github.com/jamesor">Github</a> and
+            <a href="http://twitter.com/JamesOR">Twitter</a>.
+        </footer>
+
+        <!-- Templates -->
+        <script type="text/template" id="add-color-template">
+            <input type="text" class="color" value="<%= color %>" autocomplete="off" size="7" maxlength="7" />
+            <input type="text" class="title" value="<%= title %>" autocomplete="off" size="15" maxlength="15" />
+            <button class="addBtn">Add</button>
+        </script>
+
+        <script type="text/template" id="color-item-template">
+            <div class="chip" style="background-color: <%= color %>;"></div>
+            <div class="info">
+                <div class="title"><%= title %></div>
+                <div class="color"><%= color %></div>
+            </div>
+            <button class="delBtn">Delete</button>
+        </script>
+
+        <!-- Libraries -->
+        <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="js/vendor/lodash.min.js"></script>
+        <script type="text/javascript" src="js/vendor/backbone.min.js"></script>
+
+        <!-- Plugins -->
+        <script type="text/javascript" src="js/vendor/jquery.minicolors.min.js"></script>
+
+        <!-- Application -->
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/models/ColorModel.js"></script>
+        <script type="text/javascript" src="js/collections/Colors.js"></script>
+        <script type="text/javascript" src="js/views/AddColorView.js"></script>
+        <script type="text/javascript" src="js/views/ColorSampleView.js"></script>
+        <script type="text/javascript" src="js/views/ColorItemView.js"></script>
+        <script type="text/javascript" src="js/views/ColorsListView.js"></script>
+        <script type="text/javascript" src="js/views/ApplicationView.js"></script>
+
+    </body>
+</html>

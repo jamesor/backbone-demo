@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Backbone.js</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/prettify.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="container">
+
+            <a name="slide1"></a>
+            <div class="titleSlide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h1>Backbone.js</h1>
+                    <p>An simple presentation of Backbone.js' basic features.</p>
+                </div>
+
+                <div class="row">
+                    <div class="span4 intro">
+                        <h3>James O'Reilly</h3>
+                        <p class="lead">Director, Application Engineering<br/>Fuse Networks, LLC.</p>
+                        <ul>
+                            <li><a href="http://jamesor.com" target="_blank">jamesor.com</a></li>
+                            <li><a href="http://twitter.com/jamesor" target="_blank">twitter.com/jamesor</a></li>
+                            <li><a href="http://github.com/jamesor" target="_blank">github.com/jamesor</a></li>
+                            <li><a href="http://linkedin.com/jamesor" target="_blank">linkedin.com/jamesor</a></li>
+                        </ul>
+                    </div>
+                    <div class="span8" style="text-align: center;">
+                        <p><img src="img/octocat_fork.png" /></p>
+                        Fork the demo and presentation on Github.com<br>
+                        <a href="http://github.com/jamesor/backbone-demo">http://github.com/jamesor/backbone-demo</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span12" style="text-align: center;">
+                        <button class="btn btn-primary btn-large" onclick="document.location.href='#slide2';$('footer .btn:nth-child(2)').button('toggle');loadCode('main.js', '#code2');">Begin</button>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide2-1"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - </h3>
+                    <p>2.1 Initializing the application and namespaces.</p>
+                </div>
+
+                <div class="row">
+                    <div class="span12">
+                        <p class="lead">Backbone.js is a small collection of classes and utility functions.
+                            In this presentation we will cover the basics: <span class="text-success">Model</span>,
+                            <span class="text-success">Collection</span>, <span class="text-success">View</span> and
+                            <span class="text-success">Events</span> while building a simple
+                            <a href="../app/index.html" target="_blank">demo application</a>.</p>
+                        <ul class="links">
+                            <li><span class="text-success">Model</span> - Holds data and business logic</li>
+                            <li><span class="text-success">Collection</span> - Holds a ordered sets of models</li>
+                            <li><span class="text-success">View</span> - UI and presentation logic</li>
+                            <li><span class="text-success">Events</span> - Mixin to provide an object with pub/sub ability</li>
+                            <li><span class="muted">History</span> - Global router to handle hashchange and pushstate events</li>
+                            <li><span class="muted">Router</span> - Maps urls to functions</li>
+                            <li><span class="muted">Sync Function</span> - Syncronizes models with data stores</li>
+                            <li><span class="muted">Utility Functions</span> - noConflict() and setDomLibrary()</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide2-2"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Main.js</h3>
+                    <p>2.2 Initializing the application and namespaces.</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <p>While not technically part of Backbone.js, this design pattern shows one way of organizing your project, keeping the global space clutter free.</p>
+                        <a href="#slide2-2" data-src="main.js" data-target="#code2-2">Show Code</a>
+                    </div>
+                    <div class="span9">
+                        <pre id="code2-2" class="prettyprint lang-js linenums"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide3-1"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Model Class</h3>
+                    <p>3.1 Introduction</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide3-1" data-src="model-extend.js" data-target="#code3-1">extend</a></li>
+                            <li><a href="#slide3-1" data-src="model-initialize.js" data-target="#code3-1">initialize</a></li>
+                            <li><a href="#slide3-1" data-src="model-id.js" data-target="#code3-1">id / idAttribute</a></li>
+                            <li><a href="#slide3-1" data-src="model-cid.js" data-target="#code3-1">cid</a></li>
+                            <li><a href="#slide3-1" data-src="model-isnew.js" data-target="#code3-1">isNew</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code3-1" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide3-2"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Model Class</h3>
+                    <p>3.2 Getting and Setting Data</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide3-2" data-src="model-attributes.js" data-target="#code3-2">attributes</a></li>
+                            <li><a href="#slide3-2" data-src="model-defaults.js" data-target="#code3-2">defaults</a></li>
+                            <li><a href="#slide3-2" data-src="model-get.js" data-target="#code3-2">get / escape</a></li>
+                            <li><a href="#slide3-2" data-src="model-set.js" data-target="#code3-2">set / unset</a></li>
+                            <li><a href="#slide3-2" data-src="model-validate.js" data-target="#code3-2">validate / isValid</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code3-2" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide3-3"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Model Class</h3>
+                    <p>3.3 External Data</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide3-3" data-src="model-url.js" data-target="#code3-3">url / urlRoot</a></li>
+                            <li><a href="#slide3-3" data-src="model-fetch.js" data-target="#code3-3">fetch / parse</a></li>
+                            <li><a href="#slide3-3" data-src="model-save.js" data-target="#code3-3">save</a></li>
+                            <li><a href="#slide3-3" data-src="model-destroy.js" data-target="#code3-3">destroy</a></li>
+                            <li><a href="#slide3-3" data-src="model-tojson.js" data-target="#code3-3">toJSON</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code3-3" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide4-1"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Collection Class</h3>
+                    <p>4.1 Introduction</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide4-1" data-src="coll-extend.js" data-target="#code4-1">extend</a></li>
+                            <li><a href="#slide4-1" data-src="coll-initialize.js" data-target="#code4-1">initialize</a></li>
+                            <li><a href="#slide4-1" data-src="coll-add.js" data-target="#code4-1">add / create / remove</a></li>
+                            <li><a href="#slide4-1" data-src="coll-get.js" data-target="#code4-1">get / getByCid</a></li>
+                            <li><a href="#slide4-1" data-src="coll-reset.js" data-target="#code4-1">reset</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code4-1" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide4-2"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Collection Class</h3>
+                    <p>4.2 Additional Functions</p>
+                </div>
+
+                <div class="row">
+                    <div class="span12">
+                        <dl class="dl-horizontal">
+                            <dt>Underscore.js</dt>
+                            <dd><p>Backbone.js proxies to Underscore.js the following 28 functions:</p>
+                                <code class="block">
+                                forEach (each), map, reduce (foldl, inject), reduceRight (foldr),
+                                find (detect), filter (select), reject, every (all), some (any),
+                                include, invoke, max, min, sortBy, groupBy, sortedIndex, shuffle,
+                                toArray, size, first, initial, rest, last, without, indexOf, lastIndexOf,
+                                isEmpty, chain
+                                </code>
+                            </dd>
+                            <dt>Additional</dt>
+                            <dd><p>Backbone.js addes additional functions to manage the array of models:</p>
+                                <code class="block">
+                                at, push, pop, unshift, shift, length, comparator, sort, pluck, where
+                                </code>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide4-3"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Collection Class</h3>
+                    <p>4.3 External Data</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide4-3" data-src="coll-url.js" data-target="#code4-3">url</a></li>
+                            <li><a href="#slide4-3" data-src="coll-fetch.js" data-target="#code4-3">fetch / parse</a></li>
+                            <li><a href="#slide4-3" data-src="coll-tojson.js" data-target="#code4-3">toJSON</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code4-3" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide5-1"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - View Class</h3>
+                    <p>5.1 Introduction</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide5-1" data-src="view-extend1.js" data-target="#code5-1">extend existing</a></li>
+                            <li><a href="#slide5-1" data-src="view-extend2.js" data-target="#code5-1">extend new</a></li>
+                            <li><a href="#slide5-1" data-src="view-initialize.js" data-target="#code5-1">initialize</a></li>
+                            <li><a href="#slide5-1" data-src="view-options.js" data-target="#code5-1">options</a></li>
+                            <li><a href="#slide5-1" data-src="view-el.js" data-target="#code5-1">$el / render</a></li>
+                            <li><a href="#slide5-1" data-src="view-remove.js" data-target="#code5-1">remove</a></li>
+                            <li><a href="#slide5-1" data-src="view-template.js" data-target="#code5-1">template</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code5-1" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide5-2"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - View Class</h3>
+                    <p>5.2 Templating Engines</p>
+                </div>
+
+                <div class="row">
+                    <div class="span12">
+                        <dl class="dl-horizontal">
+                            <dt>Underscore.js</dt>
+                            <dd>The built-in templating system for Backbone.js.</dd>
+                            <dt>Handlebars.js</dt>
+                            <dd><a href="http://handlebarsjs.com/" target="_blank">http://handlebarsjs.com/</a></dd>
+                            <dt>EJS</dt>
+                            <dd><a href="http://embeddedjs.com/" target="_blank">http://embeddedjs.com/</a></dd>
+                            <dt>You decide</dt>
+                            <dd><a href="http://garann.github.com/template-chooser/" target="_blank">http://garann.github.com/template-chooser/</a><br>
+                                A simple questionnaire to help you narrow down about a dozen templating engines.</dd>
+                        </dl>
+
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide5-3"></a>
+            <div class="slide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h3>Backbone.js - Events</h3>
+                    <p>5.3 Introduction</p>
+                </div>
+
+                <div class="row">
+                    <div class="span3">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li><a href="#slide5-3" data-src="view-events.js" data-target="#code5-3">view</a></li>
+                            <li><a href="#slide5-3" data-src="model-events.js" data-target="#code5-3">model</a></li>
+                            <li><a href="#slide5-3" data-src="coll-events.js" data-target="#code5-3">collection</a></li>
+                            <li><a href="#slide5-3" data-src="app-events.js" data-target="#code5-3">application</a></li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <pre id="code5-3" class="prettyprint lang-js linenums"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <a name="slide6"></a>
+            <div class="titleSlide">
+                <div class="hero-unit">
+                    <img src="img/jor.png" alt="James O'Reilly" />
+                    <h1>Thank You!</h1>
+                    <p>Follow me on Twitter and Github.</p>
+                </div>
+
+                <div class="row">
+                    <div class="span4 intro">
+                        <h3>James O'Reilly</h3>
+                        <p class="lead">Director, Application Engineering<br/>Fuse Networks, LLC.</p>
+                        <ul>
+                            <li><a href="http://jamesor.com" target="_blank">jamesor.com</a></li>
+                            <li><a href="http://twitter.com/jamesor" target="_blank">twitter.com/jamesor</a></li>
+                            <li><a href="http://github.com/jamesor" target="_blank">github.com/jamesor</a></li>
+                            <li><a href="http://linkedin.com/jamesor" target="_blank">linkedin.com/jamesor</a></li>
+                        </ul>
+                    </div>
+                    <div class="span8" style="text-align: center;">
+                        <p><img src="img/octocat_fork.png" /></p>
+                        Fork the demo and presentation on Github.com<br>
+                        <a href="http://github.com/jamesor/backbone-demo">http://github.com/jamesor/backbone-demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="row">
+                <div class="span4 copy">&copy;2012 <a href="http://github.com/jamesor">James O'Reilly</a></div>
+                <div class="span8 toc">
+                    <div class="btn-group" data-toggle="buttons-radio">
+                        <div class="btn-group">
+                            <a class="btn" href="#slide1">1</a>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#slide2-1" data-src="main.js">2.1</a>
+                            <a class="btn" href="#slide2-2" data-src="main.js" data-target="#code2-2">2.2</a>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#slide3-1" data-src="model-extend.js" data-target="#code3-1">3.1</a>
+                            <a class="btn" href="#slide3-2" data-src="model-attributes.js" data-target="#code3-2">3.2</a>
+                            <a class="btn" href="#slide3-3" data-src="model-url.js" data-target="#code3-3">3.3</a>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#slide4-1" data-src="coll-extend.js" data-target="#code4-1">4.1</a>
+                            <a class="btn" href="#slide4-2">4.2</a>
+                            <a class="btn" href="#slide4-3" data-src="coll-url.js" data-target="#code4-3">4.3</a>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#slide5-1" data-src="view-extend1.js" data-target="#code5-1">5.1</a>
+                            <a class="btn" href="#slide5-2">5.2</a>
+                            <a class="btn" href="#slide5-3" data-src="view-events.js" data-target="#code5-3">5.3</a>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#slide6">6</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/prettify.js"></script>
+
+        <script>
+
+        </script>
+    </body>
+</html>

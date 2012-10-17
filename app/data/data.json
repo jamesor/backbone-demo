@@ -1,0 +1,17 @@
+[
+    {
+        "_id": "C01",
+        "title": "Red",
+        "color": "#FF0000"
+    },
+    {
+        "_id": "C02",
+        "title": "White",
+        "color": "#FFFFFF"
+    },
+    {
+        "_id": "C03",
+        "title": "Blue",
+        "color": "#0000FF"
+    }
+]

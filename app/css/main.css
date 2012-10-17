@@ -1,0 +1,23 @@
+body{margin:0;padding:20px;background-color:#708090}
+header h1,#colorsList .title,#colorSample .title{font-family:'CharisSILBold',Helvetica,Arial,sans-serif;font-weight:normal;font-style:normal}
+header h2,#colorsList .color,#colorSample .color,footer{font-family:'InconsolataMedium',Courier,monospace;font-weight:normal;font-style:normal}
+header{color:#4e5a65;}
+header h1,header h2{margin:0;padding:0}
+header h1{text-shadow:0 1px 1px #c6ccd3;font-size:50px}
+header h2{font-size:20px}
+footer,footer a{color:#4e5a65}
+#main{display:none;position:relative;height:400px;margin:20px 0}
+#colorsList,#colorSample,#addColor{position:absolute;overflow:hidden;border:1px solid #000}
+#colorSample{width:300px;height:400px;}
+#colorSample .chip{position:absolute;width:100%;height:100%}
+#colorSample .info{background-color:#fff;position:absolute;width:100%;bottom:0;padding:10px;border-top:1px solid #000}
+#colorSample button{display:none}
+#addColor{width:290px;left:320px;background-color:#9ba6b1;padding:5px;}
+#addColor button{width:65px;right:0}
+#colorsList{width:300px;height:350px;left:320px;top:50px;background-color:#4e5a65;overflow-y:auto;list-style:none;margin:0;padding:0;}
+#colorsList .item{position:relative;background-color:#9ba6b1;border-top:1px solid #c6ccd3;border-bottom:1px solid #708090;clear:both;overflow:hidden;cursor:pointer;}
+#colorsList .item.selected{background-color:#fff}
+#colorsList .item .chip{float:left;width:50px;height:50px;border-top:2px solid #708090;border-left:2px solid #708090;border-right:2px solid #c6ccd3;border-bottom:2px solid #c6ccd3;margin:5px 10px 5px 5px}
+#colorsList .item .info .title{color:#000}
+#colorsList .item .info .color{color:#4e5a65}
+#colorsList .item button{position:absolute;right:10px;top:10px;width:65px}

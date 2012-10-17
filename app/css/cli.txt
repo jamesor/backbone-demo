@@ -1,0 +1,5 @@
+// Debug
+stylus app/css --watch
+
+// Production
+stylus app/css --compress

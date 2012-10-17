@@ -1,0 +1,147 @@
+primary-color = #708090;
+primary-color-light = lighten(primary-color, 30%);
+primary-color-light2 = lighten(primary-color, 60%);
+primary-color-dark = darken(primary-color, 30%);
+
+body {
+  margin: 0;
+  padding:  20px;
+  background-color: primary-color;
+}
+
+header h1, #colorsList .title, #colorSample .title {
+  font-family: 'CharisSILBold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+header h2, #colorsList .color, #colorSample .color, footer {
+  font-family: 'InconsolataMedium', Courier, monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  color: primary-color-dark;
+
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-shadow: 0 1px 1px primary-color-light2;
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+footer, footer a {
+  color: primary-color-dark;
+}
+
+#main {
+  display: none;
+  position: relative;
+  height: 400px;
+  margin: 20px 0;
+}
+
+#colorsList, #colorSample, #addColor {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+#colorSample {
+  width: 300px;
+  height: 400px;
+
+  .chip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .info {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    border-top: 1px solid black;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+#addColor {
+  width: 290px;
+  left: 320px;
+  background-color: primary-color-light;
+  padding: 5px;
+
+  button {
+    width: 65px;
+    right: 0;
+  }
+}
+
+#colorsList {
+  width: 300px;
+  height: 350px;
+  left: 320px;
+  top: 50px;
+  background-color: primary-color-dark;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .item {
+    position: relative;
+    background-color: primary-color-light;
+    border-top: 1px solid primary-color-light2;
+    border-bottom: 1px solid primary-color;
+    clear: both;
+    overflow: hidden;
+    cursor: pointer;
+
+    &.selected {
+      background-color: white;
+    }
+
+    .chip {
+      float: left;
+      width: 50px;
+      height: 50px;
+      border-top: 2px solid primary-color;
+      border-left: 2px solid primary-color;
+      border-right: 2px solid primary-color-light2;
+      border-bottom: 2px solid primary-color-light2;
+      margin: 5px 10px 5px 5px;
+    }
+
+    .info {
+      .title {
+        color: black;
+      }
+
+      .color {
+        color: primary-color-dark;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 65px;
+    }
+  }
+}

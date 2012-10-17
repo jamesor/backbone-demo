@@ -1,0 +1,1 @@
+backboneDemo.Models.ColorModel = Backbone.Model.extend({});
