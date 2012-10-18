@@ -14,7 +14,7 @@ backboneDemo.Views.ColorsListView = Backbone.View.extend({
   },
 
   onColorAdded: function (color) {
-    var view = new backboneDemo.Views.ColorItemView({model: color}); window.color = color;
+    var view = new backboneDemo.Views.ColorItemView({model: color});
     this.$el.append(view.render().el);
   },
 
