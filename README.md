@@ -8,6 +8,10 @@ Backbone-Demo is an open source project to demonstrate building a simple Backbon
 
 The application is built using only the basics.  To keep the demo simple only Views, Models, Collections and Events where used.  Router and Sync where intentionally omitted as advanced topics, that would be better served in a more intermediate demonstration.
 
+## ATTENTION: Special Note to Chrome Users
+
+Chrome won't allow ajax calls to a local filesystem so the demo and presentation will only work in Chrome if you run them on a web server.  Firefox and Safari do not have this same security restriction.
+
 ## Libraries Used
 
 - [Lo-Dash](https://github.com/bestiejs/lodash/) - A drop-in replacement for Underscore.js
