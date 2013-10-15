@@ -4,7 +4,7 @@ backboneDemo.Views.ApplicationView = Backbone.View.extend({
 
   initialize: function () {
     this.collection = new backboneDemo.Collections.Colors();
-    this.collection.on('reset', this.createViews, this);
+    this.collection.on('sync', this.createViews, this);
     this.collection.fetch();
   },
 
@@ -14,7 +14,7 @@ backboneDemo.Views.ApplicationView = Backbone.View.extend({
       , opts = {collection: this.collection};
 
     // Only create the views on the initial fetch
-    this.collection.off('reset', this.createViews, this);
+    this.collection.off('sync', this.createViews, this);
 
     // Storing references to the views in case we want
     // to do something with them later.
